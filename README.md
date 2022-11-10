@@ -39,7 +39,27 @@ Research Notes:
             * Starts at 0x00, and counts up
         * Empty entries have a 0x18 exactly 51 bytes after the count byte
             * Non empty entries have something else there
-*HOTBAR.DAT:
-    *General game info:
+* HOTBAR.DAT:
+    * General game info:
         * Each hotbar has 12 entries
         * Hotbars can be shared between classes or not
+    * Know from looking at the file:
+         * Each entry takes 8 bytes for each slot on the hotbar
+            * First 4 bytes correspond to an action, macro number, item
+            * 5th byte corresponds to the class job
+            * 6th byte corresponds to the hotbar number counting up from 0
+            * 7th byte corresponds to the slot number counting up from 0
+            * 8th byte corresponds to the type of action e.g 0x07 for macro, 0x09 for job class action
+                * The different numbers I've found are:
+                    * 0x01-02
+                    * 0x04
+                    * 0x06-09
+                    * 0x0A-0C
+                    * 0x0F
+                    * 0x11-12
+                    * 0x18
+                    * 0x1A
+                    * 0x1E
+                    * 0x1F
+                    * 0x20
+                    
