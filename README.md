@@ -44,22 +44,36 @@ Research Notes:
         * Each hotbar has 12 entries
         * Hotbars can be shared between classes or not
     * Know from looking at the file:
-         * Each entry takes 8 bytes for each slot on the hotbar
+        * Each Job uses 2300 bytes
+            * The first 1278 bytes are for the normal hotbars
+            * The remaining 1022 bytes are for the cross hotbars
+        * The first 2300 bytes are for the shared hotbars
+        * Each entry takes 8 bytes for each slot on the hotbar
             * First 4 bytes correspond to an action, macro number, item
             * 5th byte corresponds to the class job
             * 6th byte corresponds to the hotbar number counting up from 0
+                * The normal hotbars are numbered from 0x00 to 0x09
+                * The cross hotbars are numbered from 0x0a to 0x11
             * 7th byte corresponds to the slot number counting up from 0
             * 8th byte corresponds to the type of action e.g 0x07 for macro, 0x09 for job class action
                 * The different numbers I've found are:
-                    * 0x01-02
-                    * 0x04
-                    * 0x06-09
-                    * 0x0A-0C
-                    * 0x0F
-                    * 0x11-12
-                    * 0x18
+                    * 0x01 - Role Action
+                    * 0x02 - Item
+                    * 0x04 - Key Item
+                    * 0x06 - Emote
+                    * 0x07 - Job Action
+                    * 0x08
+                    * 0x09 - Role Action
+                    * 0x0A - General Action
+                    * 0x0B - Order Action
+                    * 0x0C - Main Commands
+                    * 0x0F - Gearset
+                    * 0x11 - Mount
+                    * 0x12 - Markers
+                    * 0x18 - Extras Actions
                     * 0x1A
+                    * 0x1D - Instrument
                     * 0x1E
                     * 0x1F
-                    * 0x20
+                    * 0x20 - Bozjar Items???
                     
